@@ -1,0 +1,20 @@
+class Solution:
+    def maxProfit(self, prices):
+
+        min_price = prices[0]
+        max_profit = 0
+
+        for price in prices:
+
+            # Minimum buying price update
+            if price < min_price:
+                min_price = price
+
+            # Profit calculate
+            profit = price - min_price
+
+            # Maximum profit update
+            if profit > max_profit:
+                max_profit = profit
+
+        return max_profit
